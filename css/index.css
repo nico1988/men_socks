@@ -1,0 +1,864 @@
+/*公共样式*/
+@charset "utf-8"; /*设置字符集*/
+/*清楚样式*/
+html, body, h1, h2, h3, div, p, span, dl, dt, dd, ul, li, ol, li, input { /*相比用* 效率更高*/
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+fieldset, img, input, textarea {
+    border: none;
+    margin: 0;
+    padding: 0;
+    outline-style: none; /*去掉获取焦点蓝色线*/
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    font: 12px/150% "微软雅黑", Arial, Verdana, "\5b8b\4f53"; /*宋体 unicode */
+}
+
+img, input {
+    border: none;
+
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.clearfix:after {
+    content: "";
+    height: 0;
+    line-height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+textarea {
+    resize: none;
+}
+
+img {
+    border: 0;
+    vertical-align: middle; /*清楚图片底部三像素的空白间隙*/
+    /*display:block; 也可以取消底部空白*/
+}
+
+/*公共样式*/
+
+html {
+    font-size: 100px;
+}
+
+body, html {
+    /*width: 100%;*/
+    height: 100%;
+}
+
+body {
+    min-width: 300px; /*最小宽度300*/
+}
+
+.container {
+    width: 100%
+}
+
+.layout {
+    overflow: hidden;
+}
+
+/*----------头部开始----------*/
+
+header {
+    background: rgba(0, 0, 0, .4);
+    height: 80px;
+    width: 100%;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+}
+
+header .navbar-default {
+    height: 80px;
+    background: rgba(0, 0, 0, .4);
+    border: none;
+}
+
+header .navbar .navbar-header {
+    height: 80px;
+}
+
+header a.logo {
+    display: block;
+    height: .8rem;
+    padding: 20px;
+    /*width: 200px;*/
+    line-height: .63rem;
+    text-indent: -1000px;
+    margin: 0 auto;
+    position: absolute;
+}
+
+@media screen and (max-width: 768px) {
+    header a.logo img {
+        margin: 0 auto;
+    }
+}
+
+header a.logo img {
+    display: block;
+    /*margin: 0 auto;*/
+}
+
+header .hamburger { /*汉堡菜单靠左*/
+    top: .13rem;
+    left: .13rem;
+}
+
+header div:first-of-type ul:first-of-type > li > a { /*每个a标签样式*/
+    font-size: .16rem;
+    height: 24px;
+    margin-top: 28px;
+    width: 128px;
+    text-align: center;
+    color: white !important;
+    border-right: 1px solid #fff;
+    line-height: 24px;
+    padding: 0; /*去掉默认的15pxpadding*/
+}
+
+@media screen and (max-width: 768px) {
+    /*小屏幕无右边框*/
+    header div:first-of-type ul:first-of-type > li > a { /*每个a标签样式*/
+        border-right: none;
+    }
+
+}
+
+header div:first-of-type ul.navbar-nav > li:last-of-type > a { /*最后一个a标签无边框*/
+    border-right: none;
+}
+
+/*会员登录*/
+
+header .navbar-right {
+    position: absolute; /*一直靠右，脱标*/
+    right: .8rem;
+}
+
+header .nav-item {
+    padding-left: 18%;
+}
+
+@media screen and (max-width: 768px) {
+    header .navbar-right {
+        position: static; /*一直靠右，脱标*/
+        /*right:41%;*/
+        background: rgba(51, 102, 153, 0.95);
+        text-align: center !important;
+    }
+
+    header .nav-item { /*设置点击时的背景*/
+        border: none;
+        background: rgba(51, 102, 153, 0.95);
+        padding: 0 20%;
+        box-sizing: border-box;
+    }
+
+    header .nav-item .collap li {
+        height: 40px;
+        /*text-align: left;*/
+        border-bottom: 1px solid #fff;
+        border-color: rgba(255, 255, 255, 0.6)
+    }
+
+    header .nav-item .collap li:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    header div:first-of-type ul:first-of-type > li > a {
+        line-height: 40px;
+        margin-top: 0;
+        text-align: left;
+    }
+}
+
+header div ul:last-of-type > li {
+    margin-top: 28px;
+}
+
+header div:last-of-type ul:last-of-type > li > a { /*每个a标签样式*/
+    display: inline-block;
+    font-size: .16rem;
+    height: .24rem;
+    width: 1rem;
+    text-align: center;
+    color: white !important;
+    line-height: 24px;
+    padding: 0; /*去掉默认的15pxpadding*/
+}
+
+header span.glyphicon-shopping-cart {
+    height: 30px;
+    width: 30px;
+}
+
+header span.glyphicon-shopping-cart:before {
+    display: block;
+    height: 30px;
+    width: 30px;
+    color: white;
+    font-size: 30px;
+}
+
+/*----------头部结束----------*/
+
+/*-----------立即购买-----------*/
+.nrw_buynow {
+    width: 100%;
+    height: 800px;
+    background-image: url(../images/cover.v1480424240.jpg);
+    background-size: 100% 800px;
+    background-attachment: fixed;
+    padding: 180px 0 75px 0;
+    color: #fff;
+    text-align: center;
+
+}
+
+.nrw_buynow h2 span {
+    font-size: 83px;
+}
+
+.nrw_buynow p {
+    margin-top: 40px;
+    font-size: 24px;
+}
+
+.nrw_buynow a {
+    display: inline-block;
+    width: 2.93rem;
+    /*height: .6rem;*/
+    margin-top: 1rem;
+    background: deepskyblue;
+    line-height: .6rem;
+    padding: 14px 96px;
+    font-size: 24px;
+    color: #fff;
+    border-radius: 6px;
+}
+
+@media screen and (max-width: 768px) {
+    .nrw_buynow a {
+        width: 50%;
+        padding: 0;
+    }
+}
+
+/*立即购买*/
+
+/*----------section开始----------*/
+/*商品大盒子*/
+
+/*单个商品*/
+@media screen and (min-width: 7.68rem) and (max-width: 20rem) {
+    section .container {
+        padding: 0 2rem;
+        font-size: 1rem;
+    }
+}
+
+section {
+    text-align: center;
+}
+
+section .product {
+    padding-top: 1rem;
+}
+
+section .product .wrap {
+    padding: .28rem .22rem;
+    margin: 0 auto;
+}
+
+section .product .wrap .item {
+    width: 100%;
+    border: 1px solid #eee;
+    margin: 0 auto;
+
+}
+
+section .product .wrap .item > a {
+    position: relative;
+    display: block
+}
+
+section .product .wrap .item > a:hover span {
+    display: block;
+    animation: shad 2s;
+
+}
+
+section .product .wrap .item > a > span { /*遮罩*/
+    position: absolute;
+    display: none;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, .3);
+    color: white;
+    font-size: 20px;
+}
+
+section .product .wrap .item > a > span > b { /*遮罩*/
+    display: block;
+    width: 30%;
+    position: absolute;
+    height: 16px;
+    padding: 16px;
+    box-sizing: content-box;
+    border: 1px solid white;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    transition: all 2s;
+}
+
+@keyframes shad {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+section .product .wrap .item > a > span > b:hover { /*遮罩*/
+    background: rgba(50, 155, 255, .9); /*悬浮改变马上购买背景色*/
+}
+
+section .product .wrap .item img {
+    width: 100%;
+}
+
+section .product .wrap h1 {
+    font-size: .36rem;
+    margin-bottom: .18rem;
+}
+
+section .product .wrap h3 {
+    color: #369;
+    margin: .18rem 0 .09rem 0;
+}
+
+section .product .wrap span.price {
+    display: block;
+    margin-bottom: .16rem;
+}
+
+section .product .wrap .item p {
+    margin-bottom: .28rem;
+}
+
+section .product a.more { /*更多产品*/
+    display: block;
+    height: .46rem;
+    width: 2.2rem;
+    background: #ff9536;
+    color: white;
+    font: bold .16rem/.46rem "Microsoft YaHEI";
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+section a.more:hover {
+    background: rgba(255, 149, 54, .8);
+
+}
+
+/*单个商品*/
+/*商品大盒子*/
+/*服务开始*/
+section.service {
+    padding: 1rem 0;
+}
+
+section.service h2 {
+    font-size: .36rem;
+    margin-bottom: .18rem;
+]
+}
+
+section.service h3 {
+    font-size: .24rem;
+}
+
+section.service i {
+    height: .96rem;
+    width: 100%;
+    margin-bottom: .3rem;
+}
+
+section.service i:before {
+    border: .04rem solid skyblue;
+    border-radius: .48rem;
+    display: block;
+    height: .96rem;
+    width: .96em;
+    font-size: .96rem;
+    margin: 0 auto; /*块级元素居中*/
+}
+
+section.service .content {
+    margin-top: .5rem;
+}
+
+section.service .content h3 {
+    margin-bottom: .09rem;
+}
+
+section.service .content p {
+    font-size: .16rem;
+}
+
+/*服务结束*/
+
+/*我们的顾客*/
+section .customer {
+    padding: 1rem 0;
+    background: url("../images/feedback@2x.v1480424240.jpg") no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+section .customer h2 {
+    font-size: .36rem;
+    margin-bottom: .18rem;
+    color: white;
+}
+
+section .customer div.number {
+    font-size: .24rem;
+    color: white;
+}
+
+/*小屏幕以上设置padding100px*/
+@media screen and (min-width: 768px) {
+    section .customer .wrap {
+        padding: 1rem;
+    }
+}
+
+section .customer .wrap .people {
+    padding: .1rem;
+    margin: .1rem;
+    background: #fff;
+    -ms-text-align: left;
+    text-align: left;
+    box-shadow: .04rem .04rem rgba(0, 0, 0, .4);
+    height: 1.37rem;
+}
+
+section .customer .wrap .people p.name {
+    font-size: .16rem;
+}
+
+section .customer .wrap img.client {
+    float: left;
+    width: .64rem;
+    height: .64rem;
+    margin-right: .1rem;
+}
+
+section .customer .wrap .comment {
+    float: left; /*相当于清除上面的浮动*/
+    margin-top: .1rem;
+}
+
+section .customer a.more { /*更多产品*/
+    display: block;
+    height: .46rem;
+    width: 2.2rem;
+    background: #ff9536;
+    color: white;
+    font: bold .16rem/.46rem "Microsoft YaHEI";
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+section a.more:hover {
+    background: rgba(255, 149, 54, .8);
+
+}
+
+/*我们的顾客*/
+/*我们的故事*/
+section .story {
+    padding: 1rem 0;
+}
+
+section .story h2 {
+    font-size: .36rem;
+    margin-bottom: .18rem;
+}
+
+section .story h3 {
+    color: #999;
+    font-size: .24rem;
+
+}
+
+section .story .wrap .stuff {
+    padding: .43rem .34rem;
+}
+
+section .story .wrap .stuff h3 {
+    color: #369;
+    margin: .25rem 0 .09rem;
+}
+
+section .story .wrap .stuff p {
+    text-align: left;
+    margin: .1rem;
+}
+
+section .story .wrap img {
+    height: 2.56rem;
+    border-radius: 1.28rem;
+    transition: all 1s;
+}
+
+section .story .wrap img:hover {
+    transform: scale(1.1);
+    box-shadow: .03rem .03rem .031rem rgba(0, 0, 0, .03)
+}
+
+/*我们的故事*/
+/*订阅*/
+.subscription {
+    padding: .3rem 0;
+    background: #272727;
+    color: #fff;
+    text-align: center;
+}
+
+.subscription p {
+    height: 20px;
+    margin-bottom: .1rem;
+}
+
+.subscription .miss {
+    font-size: .36rem;
+    height: .36rem;
+}
+
+.subscription input.form-control {
+    display: inline-block;
+}
+
+@media screen and (max-width: 768px) {
+    .subscription input.form-control {
+        float: left;
+        width: 30%;
+        display: inline-block;
+        margin-left: 30%;
+    }
+
+    .subscription button {
+        float: left;
+
+    }
+}
+
+.subscription button {
+    background: #505050;
+    border: none;
+    height: .34rem;
+    /*float: right;*/
+}
+
+/*订阅*/
+/*footer*/
+footer {
+    background: #111;
+    padding: .5rem 0 .2rem 0;
+    color: #666;
+}
+
+footer .row {
+    padding: 0 1.5rem;
+}
+
+@media screen and (max-width: 520px) {
+    footer .row {
+        padding: 0 .5rem;
+    }
+}
+
+footer .row .cont a.foot_logo {
+    display: block;
+    width: .91rem;
+    height: .29rem;
+    color: #fff;
+    font-size: .24rem;
+}
+
+footer .row .cont li span {
+    font-size: .18rem;
+}
+
+footer .row .cont li {
+    font-size: .14rem;
+}
+
+footer .row .story li a {
+}
+
+footer .row .story li {
+    font-size: .14rem;
+    height: .24rem;
+    line-height: .24rem;
+}
+
+footer .row .service {
+    font-size: .14rem;
+    height: .24rem;
+    line-height: .24rem;
+}
+
+/*footer*/
+
+/*隐藏购物车*/
+.minicart {
+    width: 3.2rem;
+    height: 1.25rem;
+    position: absolute;
+    border: .01rem solid silver;
+    top: 120%;
+    right: .1rem;
+}
+
+.minicart .subtotal_wrap {
+    height: 45%;
+    background: #7ca4c2;
+    color: #fff;
+    font-size: .16rem;
+    line-height: 100%;
+}
+
+.minicart .subtotal_wrap p {
+    height: 100%;
+    padding: .2rem .3rem;
+    line-height: 100%;
+}
+
+.minicart .subtotal_wrap a {
+    display: inline-block;
+    background: #ff9536;
+    padding: .15rem .5rem;
+    border-radius: .04rem;
+    float: right;
+    position: absolute;
+    top: .05rem;
+    right: .1rem;
+}
+
+.minicart .items {
+    height: 55%;
+    text-align: center;
+    line-height: 100%;
+    padding-top: .2rem;
+    font-size: .14rem;
+    background: #fff;
+}
+
+.minicart i {
+    position: absolute;
+    right: .1rem;
+    top: -.15rem;
+}
+
+.minicart i:before {
+    display: block;
+    height: .2rem;
+    width: .2rem;
+    font-size: .2rem;
+    color: #7ca4c2;
+}
+
+/*隐藏购物车*/
+/*支持小图标*/
+.support {
+    position: fixed;
+    bottom: .2rem;
+    right: .2rem;
+    width: .52rem;
+    height: .52rem;
+    background: dodgerblue;
+    overflow: hidden;
+    padding: .15rem;
+    border-radius: .26rem;
+}
+
+.support:hover {
+    background: rgba(30, 144, 255, .5);
+}
+
+.support img {
+    height: .22rem;
+    width: .22rem;
+}
+
+.support span {
+    margin-left: -100rem;;
+}
+
+/*支持小图标*/
+/*对话 弹出框*/
+.chart_help {
+    position: fixed;
+    bottom: 0;
+    right: .2rem;
+    width: 3.2rem;
+    height: 4.5rem;
+    background: #fff;
+    min-width: 300px;
+}
+
+.chart_help .header {
+    color: white;
+    height: 40px;
+    background: #336699;
+    border: 1px solid #369;
+    position: relative;
+    text-align: center;
+}
+
+.chart_help .header > span {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.chart_help .header .icon_chart span { /*小图标*/
+    display: inline-block;
+    line-height: 40px;
+    margin-right: 20px;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.chart_help .header .icon_chart span:last-of-type:hover { /*最后一个span变色*/
+    color: maroon;
+}
+
+.chart_help .header .icon_chart { /*小图标*/
+    display: inline-block;
+    text-align: right;
+    width: 40%;
+    position: absolute;
+    right: 0;
+}
+
+.chart_help .main {
+    height: 410px;
+}
+
+.chart_help .main .chart_content {
+    height: 70%;
+}
+
+.chart_help .main .text_input {
+    height: 20%;
+    width: 100%;
+    padding: .1rem;
+    border: 1px solid silver;
+    border-left: none;
+    border-right: none;
+}
+
+.chart_help .main .text_input textarea {
+    width: 100%;
+    height: 100%;
+}
+
+.chart_help .main .bottom {
+    height: 10%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.chart_help .main .bottom a.send {
+    position: absolute;
+    right: .2rem;
+    bottom: .03rem;
+    width: 100px;
+    height: 30px;
+    background: dodgerblue;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    border-radius: 6px;
+}
+
+.chart_help .main .bottom a.send:hover {
+    background: rgba(30, 144, 255, .6);
+}
+
+/*520px以下屏幕适配*/
+@media screen and (max-width: 520px) {
+    .chart_help {
+        width: 100%;
+        height: 100%;
+        z-index: 1001;
+        bottom: 0;
+        right: 0;
+    }
+
+    .chart_help .header {
+        height: 10% !important;
+        padding-top: 3%
+    }
+
+    .chart_help .main {
+        height: 90% !important;
+    }
+
+    .chart_help .main .bottom a.send {
+        bottom: .2rem;
+    }
+}
+
+/*对话 弹出框*/
+
+iframe {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
